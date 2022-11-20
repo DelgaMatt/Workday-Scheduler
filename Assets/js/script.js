@@ -88,7 +88,13 @@ $(function () {
 
 
   // TODO: Add code to display the current date in the header of the page.
-  
+  function timeDisplay() {
+    var timeDisplayEl = $('#currentDay');
+    var rightNow = dayjs().format('dddd, MMMM DD YYYY. h:mm:ss');
+    timeDisplayEl.text(rightNow);
+  };
+  timeDisplay();
+  setInterval(timeDisplay, 1000);
 
 
 
