@@ -37,7 +37,11 @@ $(function () {
   //
 
   // function saving input content onto local storage
-
+  $('.saveBtn').on('click', function () { //setting an event listener to the saveBtn class on click
+    var text = $(this).siblings('.description').val(); // recieving informatio from the textarea element because it has the class of 'description'
+    var time = $(this).parent().attr('id'); //recieving the changges made from it's relative time block // the id will be used to pull information from the local storage onto user interface
+    localStorage.setItem(time, text); //linking both timeblock value and text value to local storage
+  });
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
